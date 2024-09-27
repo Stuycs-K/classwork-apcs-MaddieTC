@@ -9,4 +9,7 @@ public class MyArrays {
           }
           return end + "]";
       }
+      public static void main(String[] args) {
+        System.out.println(arrayToString([1 , 2, 3]))
+      }
 }
