@@ -20,11 +20,11 @@ public class MyArrays {
 	  
 	  public static int[] concatArray(int[]ary1,int[]ary2) {
 		  int[] tgt = new int[ary1.length + ary2.length];
+		  int i = 0;
 		  for (int y = 0; y < ary1.length; y++) {
 			  tgt[y] = ary1[y];
 		  }
 		  for (int z = ary1.length; z < ary2.length + ary1.length; z++) {
-			  int i = 0;
 			  tgt[z] = ary2[i];
 			  i++;
 		  }
