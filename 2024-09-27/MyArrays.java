@@ -33,18 +33,70 @@ public class MyArrays {
 	  
       public static void main(String[] args) {
 		//arrayToString
-        int[] test = {1, 2, 3};
+        int[] test;
+		test = new int[]{1, 2, 3};
+        System.out.println(arrayToString(test));
+		test = new int[]{9, 2, 6, 8, 7};
+        System.out.println(arrayToString(test));
+		test = new int[]{};
+        System.out.println(arrayToString(test));
+		test = new int[]{10};
+        System.out.println(arrayToString(test));
+		test = new int[]{0, 2, 3, 20000};
         System.out.println(arrayToString(test));
 		
 		//returnCopy
-		int[] test2 = {1, 2, 3};
+		int[] test2;
+		test2 = new int[]{1, 2, 3};
+		System.out.println("Old: " + arrayToString(test2) 
+							+ " New: " + arrayToString(returnCopy(test2)));
+		System.out.println("Do the addresses match? " + (test2 == returnCopy(test2)));
+		test2 = new int[]{9, 2, 6, 8, 7};
+		System.out.println("Old: " + arrayToString(test2) 
+							+ " New: " + arrayToString(returnCopy(test2)));
+		System.out.println("Do the addresses match? " + (test2 == returnCopy(test2)));
+		test2 = new int[]{};
+		System.out.println("Old: " + arrayToString(test2) 
+							+ " New: " + arrayToString(returnCopy(test2)));
+		System.out.println("Do the addresses match? " + (test2 == returnCopy(test2)));
+		test2 = new int[]{10};
+		System.out.println("Old: " + arrayToString(test2) 
+							+ " New: " + arrayToString(returnCopy(test2)));
+		System.out.println("Do the addresses match? " + (test2 == returnCopy(test2)));
+		test2 = new int[]{0, 2, 3, 20000};
 		System.out.println("Old: " + arrayToString(test2) 
 							+ " New: " + arrayToString(returnCopy(test2)));
 		System.out.println("Do the addresses match? " + (test2 == returnCopy(test2)));
 		
 		//concatArray
-		int[] test3 = {1, 2, 3};
-		int[] test4 = {4, 5, 6};
+		int[] test3; 
+		int[] test4; 
+		test3 = new int[]{1, 2, 3};
+		test4 = new int[]{4, 5, 6};
+		System.out.println("Add " + arrayToString(test3) + " to " + arrayToString(test4));
+		System.out.println("Result: " + arrayToString(concatArray(test3, test4)));
+		test3 = new int[]{4, 5, 6};
+		test4 = new int[]{1, 2, 3};
+		System.out.println("Add " + arrayToString(test3) + " to " + arrayToString(test4));
+		System.out.println("Result: " + arrayToString(concatArray(test3, test4)));
+		test3 = new int[]{1, 2, 3, 4, 5, 6};
+		test4 = new int[]{7, 8, 9};
+		System.out.println("Add " + arrayToString(test3) + " to " + arrayToString(test4));
+		System.out.println("Result: " + arrayToString(concatArray(test3, test4)));
+		test3 = new int[]{1, 2, 3};
+		test4 = new int[]{4, 5, 6, 7, 8, 9, 10};
+		System.out.println("Add " + arrayToString(test3) + " to " + arrayToString(test4));
+		System.out.println("Result: " + arrayToString(concatArray(test3, test4)));
+		test3 = new int[]{1, 2, 3};
+		test4 = new int[]{};
+		System.out.println("Add " + arrayToString(test3) + " to " + arrayToString(test4));
+		System.out.println("Result: " + arrayToString(concatArray(test3, test4)));
+		test3 = new int[]{};
+		test4 = new int[]{4, 5, 6};
+		System.out.println("Add " + arrayToString(test3) + " to " + arrayToString(test4));
+		System.out.println("Result: " + arrayToString(concatArray(test3, test4)));
+		test3 = new int[]{};
+		test4 = new int[]{};
 		System.out.println("Add " + arrayToString(test3) + " to " + arrayToString(test4));
 		System.out.println("Result: " + arrayToString(concatArray(test3, test4)));
       }
