@@ -50,23 +50,23 @@ public class MyArrays {
 		test2 = new int[]{1, 2, 3};
 		System.out.println("Old: " + arrayToString(test2) 
 							+ " New: " + arrayToString(returnCopy(test2)));
-		System.out.println("Do the addresses match? (expected false:) " + (test2 == returnCopy(test2)));
+		System.out.println("Do the addresses match? (expected false): " + (test2 == returnCopy(test2)));
 		test2 = new int[]{9, 2, 6, 8, 7};
 		System.out.println("Old: " + arrayToString(test2) 
 							+ " New: " + arrayToString(returnCopy(test2)));
-		System.out.println("Do the addresses match? (expected false:) " + (test2 == returnCopy(test2)));
+		System.out.println("Do the addresses match? (expected false): " + (test2 == returnCopy(test2)));
 		test2 = new int[]{};
 		System.out.println("Old: " + arrayToString(test2) 
 							+ " New: " + arrayToString(returnCopy(test2)));
-		System.out.println("Do the addresses match? (expected false:) " + (test2 == returnCopy(test2)));
+		System.out.println("Do the addresses match? (expected false): " + (test2 == returnCopy(test2)));
 		test2 = new int[]{10};
 		System.out.println("Old: " + arrayToString(test2) 
 							+ " New: " + arrayToString(returnCopy(test2)));
-		System.out.println("Do the addresses match? (expected false:) " + (test2 == returnCopy(test2)));
+		System.out.println("Do the addresses match? (expected false): " + (test2 == returnCopy(test2)));
 		test2 = new int[]{0, 2, 3, 20000};
 		System.out.println("Old: " + arrayToString(test2) 
 							+ " New: " + arrayToString(returnCopy(test2)));
-		System.out.println("Do the addresses match? (expected false:) " + (test2 == returnCopy(test2)));
+		System.out.println("Do the addresses match? (expected false): " + (test2 == returnCopy(test2)));
 		
 		//concatArray
 		int[] test3; 
