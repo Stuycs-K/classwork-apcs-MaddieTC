@@ -27,6 +27,6 @@ public class MyArrays {
 		int[] test2 = {1, 2, 3};
 		System.out.println("Old: " + arrayToString(test2) 
 							+ " New: " + arrayToString(returnCopy(test2)));
-		System.out.println("Old address: " test2 + " New address: " + returnCopy(test2));
+		System.out.println("Do the addresses match? " + (test2 == returnCopy(test2)));
       }
 }
