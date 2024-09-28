@@ -19,7 +19,7 @@ public class MyArrays {
 	  }
 	  
 	  public static int[] concatArray(int[]ary1,int[]ary2) {
-		  int[] tgt = int[ary1.length + ary2.length];
+		  int[] tgt = new int[ary1.length + ary2.length];
 		  for (int y = 0; y < ary1.length; y++) {
 			  tgt[y] = ary1[y];
 		  }
@@ -46,6 +46,6 @@ public class MyArrays {
 		int[] test3 = {1, 2, 3};
 		int[] test4 = {4, 5, 6};
 		System.out.println("Add " + arrayToString(test3) + " to " + arrayToString(test4));
-		Sytem.out.println("Result: " arrayToString(concat(test3, test4)));
+		Sytem.out.println("Result: " arrayToString(concatArray(test3, test4)));
       }
 }
