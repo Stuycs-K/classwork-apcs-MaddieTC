@@ -46,6 +46,6 @@ public class MyArrays {
 		int[] test3 = {1, 2, 3};
 		int[] test4 = {4, 5, 6};
 		System.out.println("Add " + arrayToString(test3) + " to " + arrayToString(test4));
-		Sytem.out.println("Result: " arrayToString(concatArray(test3, test4)));
+		System.out.println("Result: " + arrayToString(concatArray(test3, test4)));
       }
 }
