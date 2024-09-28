@@ -11,6 +11,6 @@ public class MyArrays {
       }
       public static void main(String[] args) {
         int[] test = {1, 2, 3};
-        System.out.println(arrayToString(test[]));
+        System.out.println(arrayToString(test));
       }
 }
