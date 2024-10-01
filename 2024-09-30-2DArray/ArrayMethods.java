@@ -61,10 +61,22 @@ public class ArrayMethods {
     * You may assume the array is rectangular and neither rows nor cols is 0.
     * e.g. swapRC({{1,2,3},{4,5,6}}) returns {{1,4},{2,5},{3,6}}
     */
- // public static int[][] swapRC(int[][]nums){
-   // int r = nums[0].length;
-//	return 0;
-  //}
+  public static int[][] swapRC(int[][]nums){
+    int[][] result;
+	int big = 0;
+	for (int z = 0; z < nums.length; z++) {
+		if (nums[z].length > big) {
+			big = nums[z].length;
+		}
+	}
+	result = new int[big][nums.length];
+	for (int y = 0; y < nums.length; y++) {
+		for (int x = 0; x < nums[y].length; x++) {
+			result[x][y] = nums[y][x];
+		}
+	}
+	return result;
+  }
   
   public static void main(String[] args) {
 	  int[] arr1;
@@ -79,8 +91,8 @@ public class ArrayMethods {
 	  arr3 = new int[][] {{1, 2, 3}, {4, 5, 6}};
 	  System.out.println("Sum: " + arr2DSum(arr3) + " expected? " + (arr2DSum(arr3) == 21));
 	  
-//	  int[][] arr4;
-//	  arr4 = new int[][] {{1, 2, 3}, {4, 5, 6}};
-//	  System.out.println("Initial: " + arrToString(arr4) + " Into: " + arrToString(swapRC(arr4)));
+	  int[][] arr4;
+	  arr4 = new int[][] {{1, 2, 3}, {4, 5, 6}};
+	  System.out.println("Initial: " + arrToString(arr4) + " Into: " + arrToString(swapRC(arr4)));
   }
 }
