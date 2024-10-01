@@ -49,15 +49,11 @@ public class ArrayMethods {
   //use a nested loop to solve this
   public static int arr2DSum(int[][]nums){
     int result = 0;
-  /*  for(int i = 0; i < nums.length; i++) {
-      int rrr = nums[i].length;
-      for(int j = 0; j < rrr; j++) {
-      for(int j = 0; j < rrr; j++) {
-      for(int j = 0; j < rrr; j++) {
-      for(int j = 0; j < rrr; j++) {
-        result += nums[i][j];
-      }
-    } */
+	for (int y = 0; y < nums.length; y++) {
+		for (int x = 0; x < nums[y].length; x++) {
+			result = result + nums[y][x];
+		}
+	}
     return result; 
   }
 
