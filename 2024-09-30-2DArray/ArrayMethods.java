@@ -28,6 +28,7 @@ public class ArrayMethods {
     * previous code, but you should NOT duplicate that code. (Don't copy/paste or retype it)
     */
   public static String arrToString(int[][]ary){
+/*  Original code:
     String result = "[";
     for(int i = 0; i < ary.length; i++) {
       result += '[';
@@ -42,7 +43,16 @@ public class ArrayMethods {
 		  result += "], ";
 	  }
     }
-    return (result + "]]");
+    return (result + "]]"); */
+	
+	String result = "[";
+	for (int y = 0; y < ary.length; y++) {
+		result = result + arrToString(ary[y]);
+		if (y != ary.length - 1) {
+			result += ", ";
+		}
+	}
+    return result + "]";
   }
 
   /*Return the sum of all of the values in the 2D array */
@@ -82,17 +92,55 @@ public class ArrayMethods {
 	  int[] arr1;
 	  arr1 = new int[] {2, 3, 4, 9};
 	  System.out.println(arrToString(arr1));
+	  arr1 = new int[] {};
+	  System.out.println(arrToString(arr1));
 	  
 	  int[][] arr2;
 	  arr2 = new int[][] {{2, 3, 4}, {5, 6, 7}, {2, 4, 9}};
+	  System.out.println(arrToString(arr2));
+	  arr2 = new int[][] {{}, {5, 6, 7}, {2, 4, 9}};
+	  System.out.println(arrToString(arr2));
+	  arr2 = new int[][] {{2, 3, 4}, {}, {2, 4, 9}};
+	  System.out.println(arrToString(arr2));
+	  arr2 = new int[][] {{2, 3, 4}, {5, 6, 7}, {}};
+	  System.out.println(arrToString(arr2));
+	  arr2 = new int[][] {{}, {}, {}};
+	  System.out.println(arrToString(arr2));
+	  arr2 = new int[][] {{}, {}, {2, 4, 9}};
+	  System.out.println(arrToString(arr2));
+	  arr2 = new int[][] {{2, 3, 4}, {5, 6, 7}, {}};
 	  System.out.println(arrToString(arr2));
 	  
 	  int[][] arr3;
 	  arr3 = new int[][] {{1, 2, 3}, {4, 5, 6}};
 	  System.out.println("Sum: " + arr2DSum(arr3) + " expected? " + (arr2DSum(arr3) == 21));
-	  
+	  arr3 = new int[][] {{1, 2}, {4, 5, 6}};
+	  System.out.println("Sum: " + arr2DSum(arr3) + " expected? " + (arr2DSum(arr3) == 18));
+	  arr3 = new int[][] {{1, 2, 3}, {4, 5}};
+	  System.out.println("Sum: " + arr2DSum(arr3) + " expected? " + (arr2DSum(arr3) == 15));
+	  arr3 = new int[][] {{}, {4, 5, 6}};
+	  System.out.println("Sum: " + arr2DSum(arr3) + " expected? " + (arr2DSum(arr3) == 15));
+	  arr3 = new int[][] {{1, 2, 3}, {}};
+	  System.out.println("Sum: " + arr2DSum(arr3) + " expected? " + (arr2DSum(arr3) == 6));
+	  arr3 = new int[][] {{}, {}};
+	  System.out.println("Sum: " + arr2DSum(arr3) + " expected? " + (arr2DSum(arr3) == 0));
+	  arr3 = new int[][] {{1}, {4}};
+	  System.out.println("Sum: " + arr2DSum(arr3) + " expected? " + (arr2DSum(arr3) == 5));
+
 	  int[][] arr4;
 	  arr4 = new int[][] {{1, 2, 3}, {4, 5, 6}};
+	  System.out.println("Initial: " + arrToString(arr4) + " Into: " + arrToString(swapRC(arr4)));
+	  arr4 = new int[][] {{1, 2, 3}, {4, 5}};
+	  System.out.println("Initial: " + arrToString(arr4) + " Into: " + arrToString(swapRC(arr4)));
+	  arr4 = new int[][] {{1, 2}, {4, 5, 6}};
+	  System.out.println("Initial: " + arrToString(arr4) + " Into: " + arrToString(swapRC(arr4)));
+	  arr4 = new int[][] {{1, 2, 3}, {4, 5, 6, 7, 8}};
+	  System.out.println("Initial: " + arrToString(arr4) + " Into: " + arrToString(swapRC(arr4)));
+	  arr4 = new int[][] {{1, 2, 3, 4, 5}, {6, 7, 8}};
+	  System.out.println("Initial: " + arrToString(arr4) + " Into: " + arrToString(swapRC(arr4)));
+	  arr4 = new int[][] {{}, {4, 5, 6}};
+	  System.out.println("Initial: " + arrToString(arr4) + " Into: " + arrToString(swapRC(arr4)));
+	  arr4 = new int[][] {{1, 2, 3}, {}};
 	  System.out.println("Initial: " + arrToString(arr4) + " Into: " + arrToString(swapRC(arr4)));
   }
 }
