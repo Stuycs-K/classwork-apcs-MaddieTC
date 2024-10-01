@@ -28,7 +28,7 @@ public class ArrayMethods {
     * previous code, but you should NOT duplicate that code. (Don't copy/paste or retype it)
     */
   public static String arrToString(int[][]ary){
-    String result = "]";
+    String result = "[";
     for(int i = 0; i < ary.length; i++) {
       result += '[';
       int rrr = ary[i].length;
@@ -38,7 +38,9 @@ public class ArrayMethods {
           result += ", ";
         }
       }
-      result += ']';
+	  if (i != ary.length-1){
+		  result += "], ";
+	  }
     }
     return (result + ']');
   }
@@ -47,12 +49,15 @@ public class ArrayMethods {
   //use a nested loop to solve this
   public static int arr2DSum(int[][]nums){
     int result = 0;
-    for(int i = 0; i < ary.length; i++) {
-      int rrr = ary[i].length;
+  /*  for(int i = 0; i < nums.length; i++) {
+      int rrr = nums[i].length;
       for(int j = 0; j < rrr; j++) {
-        result += ary[i][j];
+      for(int j = 0; j < rrr; j++) {
+      for(int j = 0; j < rrr; j++) {
+      for(int j = 0; j < rrr; j++) {
+        result += nums[i][j];
       }
-    }
+    } */
     return result; 
   }
 
@@ -60,10 +65,10 @@ public class ArrayMethods {
     * You may assume the array is rectangular and neither rows nor cols is 0.
     * e.g. swapRC({{1,2,3},{4,5,6}}) returns {{1,4},{2,5},{3,6}}
     */
-  public static int[][] swapRC(int[][]nums){
-    return new int[1][1];
-    int r = nums[0].length;
-  }
+ // public static int[][] swapRC(int[][]nums){
+   // int r = nums[0].length;
+//	return 0;
+  //}
   
   public static void main(String[] args) {
 	  int[] arr1;
@@ -76,10 +81,10 @@ public class ArrayMethods {
 	  
 	  int[][] arr3;
 	  arr3 = new int[][] {{1, 2, 3}, {4, 5, 6}};
-	  System.out.println("Sum: " + arr2DSum(arr3) + " expected? " + arr2DSum(arr3) == 21);
+	  System.out.println("Sum: " + arr2DSum(arr3) + " expected? " + (arr2DSum(arr3) == 21));
 	  
-	  int[][] arr4;
-	  arr4 = new int[][] {{1, 2, 3}, {4, 5, 6}};
-	  System.out.println("Initial: " + arrToString(arr4) + " Into: " + arrToString(swapRC(arr4)));
+//	  int[][] arr4;
+//	  arr4 = new int[][] {{1, 2, 3}, {4, 5, 6}};
+//	  System.out.println("Initial: " + arrToString(arr4) + " Into: " + arrToString(swapRC(arr4)));
   }
 }
