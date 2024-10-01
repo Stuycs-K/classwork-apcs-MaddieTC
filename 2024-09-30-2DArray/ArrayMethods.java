@@ -75,7 +75,7 @@ public class ArrayMethods {
 	  System.out.println(arrToString(arr2));
 	  
 	  int[][] arr3;
-	  arr3 = new int[][] {{1, 2, 3}, {4, 5, 6}}
+	  arr3 = new int[][] {{1, 2, 3}, {4, 5, 6}};
 	  System.out.println("Sum: " + arr2DSum(arr3) + " expected? " + arr2DSum(arr3) == 21);
 	  
 	  int[][] arr4;
