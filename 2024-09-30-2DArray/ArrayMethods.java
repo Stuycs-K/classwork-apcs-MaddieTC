@@ -42,7 +42,7 @@ public class ArrayMethods {
 		  result += "], ";
 	  }
     }
-    return (result + ']');
+    return (result + "]]");
   }
 
   /*Return the sum of all of the values in the 2D array */
