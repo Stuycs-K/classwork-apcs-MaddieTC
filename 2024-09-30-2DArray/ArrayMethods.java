@@ -191,6 +191,6 @@ public class ArrayMethods {
 	  
 	  int[][] arr6; 
 	  arr6 = new int[][] {{1, 2, 3}, {4, 5, 6}};
-	  System.out.println("Copy: " + arrToString(copy(arr6)) + " Is the address the same? (expected false): " + (arr6 == (copy(arr6))));
+	  System.out.println("Original: " + arrToString(arr6) + " Copy: " + arrToString(copy(arr6)) + " Is the address the same? (expected false): " + (arr6 == (copy(arr6))));
   }
 }
