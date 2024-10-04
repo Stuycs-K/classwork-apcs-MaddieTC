@@ -112,9 +112,21 @@ public class ArrayMethods {
 //DO NOT use any built in methods that "copy" an array.
 //You SHOULD write a helper method for this.
 //If you don't see a good way to do that, you should stop and look at prior methods.
+	public static int[] helper(int[] nums) {
+		int[] result = new int[nums.length];
+		for (int y = 0; y < nums.length; y++) {
+			result[y] = nums[y];
+			}
+		  return result;
+	}
+	
 	public static int[][] copy(int[][] nums){
-  return null;//placeholder so it compiles
-}
+		int[][] result = new int[nums.length][];
+		for (int y = 0 ; y < nums.length; y++) {
+			result[y] = helper(nums[y]);
+		}
+		return result;
+	}
   
   public static void main(String[] args) {
 	  int[] arr1;
@@ -176,6 +188,9 @@ public class ArrayMethods {
 	  System.out.println("Old: " + arrToString(arr5)); 
 	  replaceNegative(arr5);
 	  System.out.println("New: " + arrToString(arr5));
-
+	  
+	  int[][] arr6; 
+	  arr6 = new int[][] {{1, 2, 3}, {4, 5, 6}};
+	  System.out.println("Copy: " + arrToString(copy(arr6)) + " Is the address the same? (expected false): " + (arr6 == (copy(arr6))));
   }
 }
