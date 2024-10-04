@@ -192,6 +192,10 @@ public class ArrayMethods {
 	  System.out.println("Old: " + arrToString(arr5)); 
 	  replaceNegative(arr5);
 	  System.out.println("New: " + arrToString(arr5));
+	  arr5 = new int[][] {{-3, -2, -1}, {3, -2, 1, -4}, {-9,-7,-3}};
+	  System.out.println("Old: " + arrToString(arr5)); 
+	  replaceNegative(arr5);
+	  System.out.println("New: " + arrToString(arr5));
 	  
 	  int[][] arr6; 
 	  arr6 = new int[][] {{1, 2, 3}, {4, 5, 6}};
