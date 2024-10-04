@@ -200,6 +200,6 @@ public class ArrayMethods {
 	  int[][] arr7 = copy(arr6);
 	  arr6[0][0] = 10;
 	  System.out.print("Original (edited): " + arrToString(arr6));
-	  System.out.println(" Copy of (unedited) original: " + arrToString(arr7) + " Is the address the same? (expected false): " + (arr6 == (copy(arr6))));
+	  System.out.println(" Copy of (unedited) original: " + arrToString(arr7) + " Is the address the same? (expected false): " + (arr6 == arr7));
   }
 }
