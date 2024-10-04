@@ -188,9 +188,18 @@ public class ArrayMethods {
 	  System.out.println("Old: " + arrToString(arr5)); 
 	  replaceNegative(arr5);
 	  System.out.println("New: " + arrToString(arr5));
+	  arr5 = new int[][] {{-3, -2, -1}, {3, -2, 1}};
+	  System.out.println("Old: " + arrToString(arr5)); 
+	  replaceNegative(arr5);
+	  System.out.println("New: " + arrToString(arr5));
 	  
 	  int[][] arr6; 
 	  arr6 = new int[][] {{1, 2, 3}, {4, 5, 6}};
 	  System.out.println("Original: " + arrToString(arr6) + " Copy: " + arrToString(copy(arr6)) + " Is the address the same? (expected false): " + (arr6 == (copy(arr6))));
+	  arr6 = new int[][] {{1, 2, 3}, {4, 5, 6}};
+	  System.out.print("Original: " + arrToString(arr6));
+	  arr7 = copy(arr6);
+	  arr6 = {{1, 1, 1, 1}, {2, 2}};
+	  System.out.println(" Copy: " + arrToString(arr7) + " Is the address the same? (expected false): " + (arr6 == (copy(arr6))));
   }
 }
