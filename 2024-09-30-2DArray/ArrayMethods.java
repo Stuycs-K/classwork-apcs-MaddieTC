@@ -87,6 +87,34 @@ public class ArrayMethods {
 	}
 	return result;
   }
+//3. Modify a given 2D array of integer as follows:
+//Replace all the negative values:
+//-When the row number is the same as the column number replace
+//that negative with the value 1
+//-All other negatives replace with 0
+	public static void replaceNegative(int[][] vals){ 
+	for(int i = 0; i < vals.length; i++) {
+    for(int j = 0; j < vals[i].length; j++) {
+      if(vals[i][j] < 0) {
+        if(i == j) {
+          vals[i][j] = 1;
+        }
+        else {
+          vals[i][j] = 0;
+        }
+      }
+    }
+  }
+}
+
+//4. Make a copy of the given 2d array.
+//When testing : make sure that changing the original does NOT change the copy.
+//DO NOT use any built in methods that "copy" an array.
+//You SHOULD write a helper method for this.
+//If you don't see a good way to do that, you should stop and look at prior methods.
+	public static int[][] copy(int[][] nums){
+  return null;//placeholder so it compiles
+}
   
   public static void main(String[] args) {
 	  int[] arr1;
@@ -142,5 +170,12 @@ public class ArrayMethods {
 	  System.out.println("Initial: " + arrToString(arr4) + " Into: " + arrToString(swapRC(arr4)));
 	  arr4 = new int[][] {{1, 2, 3}, {}};
 	  System.out.println("Initial: " + arrToString(arr4) + " Into: " + arrToString(swapRC(arr4)));
+	  
+	  int[][] arr5;
+	  arr5 = new int[][] {{-3, -2, -1}, {3, 2, 1}};
+	  System.out.println("Old: " + arrToString(arr5)); 
+	  replaceNegative(arr5);
+	  System.out.println("New: " + arrToString(arr5));
+
   }
 }
