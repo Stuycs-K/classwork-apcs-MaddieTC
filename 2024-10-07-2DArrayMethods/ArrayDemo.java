@@ -8,6 +8,7 @@ public class ArrayDemo{
     int[][] arr1;
     arr1 = new int[][] {{1, 0, 3}, {0, 5, 0}};
     System.out.println("Arr: " + Arrays.deepToString(arr1) + " Zeros: " + countZeros2D(arr1));
+	System.out.println("Does personal method match the built in method? " + Arrays.deepToString(arr1).equals(arrToString(arr1)));
 	
 	int[][] arr3;
 	arr3 = new int[][] {{1, 2, 3}, {4, 5, 6}};
