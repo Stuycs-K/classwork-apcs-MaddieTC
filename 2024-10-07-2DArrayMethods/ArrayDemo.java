@@ -47,6 +47,22 @@ public class ArrayDemo{
 	arr6[0][0] = 10;
 	System.out.print("Original (edited): " + Arrays.deepToString(arr6));
 	System.out.println(" Copy of (unedited) original: " + Arrays.deepToString(arr7) + " Is the address the same? (expected false): " + (arr6 == arr7));
+	
+    int[][] arr4;
+	arr4 = new int[][] {{1, 2, 3}, {4, 5, 6}};
+	System.out.println("Initial: " + Arrays.deepToString(arr4) + " Into: " + Arrays.deepToString(swapRC(arr4)));
+	arr4 = new int[][] {{1, 2, 3}, {4, 5}};
+	System.out.println("Initial: " + Arrays.deepToString(arr4) + " Into: " + Arrays.deepToString(swapRC(arr4)));
+	arr4 = new int[][] {{1, 2}, {4, 5, 6}};
+	System.out.println("Initial: " + Arrays.deepToString(arr4) + " Into: " + Arrays.deepToString(swapRC(arr4)));
+	arr4 = new int[][] {{1, 2, 3}, {4, 5, 6, 7, 8}};
+	System.out.println("Initial: " + Arrays.deepToString(arr4) + " Into: " + Arrays.deepToString(swapRC(arr4)));
+	arr4 = new int[][] {{1, 2, 3, 4, 5}, {6, 7, 8}};
+	System.out.println("Initial: " + Arrays.deepToString(arr4) + " Into: " + Arrays.deepToString(swapRC(arr4)));
+	arr4 = new int[][] {{}, {4, 5, 6}};
+	System.out.println("Initial: " + Arrays.deepToString(arr4) + " Into: " + Arrays.deepToString(swapRC(arr4)));
+	arr4 = new int[][] {{1, 2, 3}, {}};
+	System.out.println("Initial: " + Arrays.deepToString(arr4) + " Into: " + Arrays.deepToString(swapRC(arr4)));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -148,7 +164,20 @@ public class ArrayDemo{
   //   You may assume the array is rectangular and neither rows nor cols is 0.
   //   e.g. swapRC({{1,2,3},{4,5,6}}) returns {{1,4},{2,5},{3,6}}
   public static int[][] swapRC(int[][]nums){
-    return new int[1][1];
+    int[][] result;
+	int big = 0;
+	for (int z = 0; z < nums.length; z++) {
+		if (nums[z].length > big) {
+			big = nums[z].length;
+		}
+	}
+	result = new int[big][nums.length];
+	for (int y = 0; y < nums.length; y++) {
+		for (int x = 0; x < nums[y].length; x++) {
+			result[x][y] = nums[y][x];
+		}
+	}
+	return result;
   }
 
   //6. Make an HTML table by putting a table tag around the entire 2d array,
