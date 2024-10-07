@@ -25,6 +25,19 @@ public class ArrayDemo{
 	arr3 = new int[][] {{1}, {4}};
 	System.out.println("Sum: " + arr2DSum(arr3) + " expected? " + (arr2DSum(arr3) == 5));
 
+	int[][] arr5;
+	arr5 = new int[][] {{-3, -2, -1}, {3, 2, 1}};
+	System.out.println("Old: " + Arrays.deepToString(arr5)); 
+	replaceNegative(arr5);
+	System.out.println("New: " + Arrays.deepToString(arr5));
+	arr5 = new int[][] {{-3, -2, -1}, {3, -2, 1}};
+	System.out.println("Old: " + Arrays.deepToString(arr5)); 
+	replaceNegative(arr5);
+	System.out.println("New: " + Arrays.deepToString(arr5));
+	arr5 = new int[][] {{-3, -2, -1}, {3, -2, 1, -4}, {-9,-7,-3}};
+	System.out.println("Old: " + Arrays.deepToString(arr5)); 
+	replaceNegative(arr5);
+	System.out.println("New: " + Arrays.deepToString(arr5));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -86,8 +99,19 @@ public class ArrayDemo{
   //that negative with the value 1
   //-All other negatives replace with 0
   public static void replaceNegative(int[][] vals){
-
+	for(int i = 0; i < vals.length; i++) {
+    for(int j = 0; j < vals[i].length; j++) {
+      if(vals[i][j] < 0) {
+        if(i == j) {
+          vals[i][j] = 1;
+        }
+        else {
+          vals[i][j] = 0;
+        }
+      }
+    }
   }
+}
 
   //4. Make a copy of the given 2d array.
   //When testing : make sure that changing the original does NOT change the copy.
