@@ -38,6 +38,15 @@ public class ArrayDemo{
 	System.out.println("Old: " + Arrays.deepToString(arr5)); 
 	replaceNegative(arr5);
 	System.out.println("New: " + Arrays.deepToString(arr5));
+	
+	int[][] arr6; 
+	arr6 = new int[][] {{1, 2, 3}, {4, 5, 6}};
+	System.out.println("Original: " + Arrays.deepToString(arr6) + " Copy: " + Arrays.deepToString(copy(arr6)) + " Is the address the same? (expected false): " + (arr6 == (copy(arr6))));
+	arr6 = new int[][] {{1, 2, 3}, {4, 5, 6}};
+	int[][] arr7 = copy(arr6);
+	arr6[0][0] = 10;
+	System.out.print("Original (edited): " + Arrays.deepToString(arr6));
+	System.out.println(" Copy of (unedited) original: " + Arrays.deepToString(arr7) + " Is the address the same? (expected false): " + (arr6 == arr7));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -118,9 +127,22 @@ public class ArrayDemo{
   //DO NOT use any built in methods that "copy" an array.
   //You SHOULD write a helper method for this.
   //If you don't see a good way to do that, you should stop and look at prior methods.
-  public static int[][] copy(int[][] nums){
-    return new int[1][1];
-  }
+	public static int[] helper(int[] nums) {
+		int[] result = new int[nums.length];
+		for (int y = 0; y < nums.length; y++) {
+			result[y] = nums[y];
+			}
+		  return result;
+	}
+	
+	public static int[][] copy(int[][] nums){
+		int[][] result = new int[nums.length][];
+		for (int y = 0 ; y < nums.length; y++) {
+			result[y] = helper(nums[y]);
+		}
+		return result;
+	}
+
 
   //5. Rotate an array by returning a new array with the rows and columns swapped.
   //   You may assume the array is rectangular and neither rows nor cols is 0.
