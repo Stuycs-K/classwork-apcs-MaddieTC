@@ -8,6 +8,23 @@ public class ArrayDemo{
     int[][] arr1;
     arr1 = new int[][] {{1, 0, 3}, {0, 5, 0}};
     System.out.println("Arr: " + Arrays.deepToString(arr1) + " Zeros: " + countZeros2D(arr1));
+	
+	int[][] arr3;
+	arr3 = new int[][] {{1, 2, 3}, {4, 5, 6}};
+	System.out.println("Sum: " + arr2DSum(arr3) + " expected? " + (arr2DSum(arr3) == 21));
+	arr3 = new int[][] {{1, 2}, {4, 5, 6}};
+	System.out.println("Sum: " + arr2DSum(arr3) + " expected? " + (arr2DSum(arr3) == 18));
+	arr3 = new int[][] {{1, 2, 3}, {4, 5}};
+	System.out.println("Sum: " + arr2DSum(arr3) + " expected? " + (arr2DSum(arr3) == 15));
+	arr3 = new int[][] {{}, {4, 5, 6}};
+	System.out.println("Sum: " + arr2DSum(arr3) + " expected? " + (arr2DSum(arr3) == 15));
+	arr3 = new int[][] {{1, 2, 3}, {}};
+	System.out.println("Sum: " + arr2DSum(arr3) + " expected? " + (arr2DSum(arr3) == 6));
+	arr3 = new int[][] {{}, {}};
+	System.out.println("Sum: " + arr2DSum(arr3) + " expected? " + (arr2DSum(arr3) == 0));
+	arr3 = new int[][] {{1}, {4}};
+	System.out.println("Sum: " + arr2DSum(arr3) + " expected? " + (arr2DSum(arr3) == 5));
+
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -54,7 +71,13 @@ public class ArrayDemo{
   /*Return the sum of all of the values in the 2D array
    *Use a nested loop instead of a helper method*/
   public static int arr2DSum(int[][]nums){
-    return 0;
+    int result = 0;
+	for (int y = 0; y < nums.length; y++) {
+		for (int x = 0; x < nums[y].length; x++) {
+			result = result + nums[y][x];
+		}
+	}
+    return result; 
   }
 
   //3. Modify a given 2D array of integer as follows:
