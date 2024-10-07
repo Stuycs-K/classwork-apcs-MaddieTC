@@ -7,7 +7,7 @@ public class ArrayDemo{
     //do not use any other Arrays.method()
     int[][] arr1;
     arr1 = new int[][] {{1, 0, 3}, {0, 5, 0}};
-    System.out.println("Arr: " + Arrays.toString(arr1) + " Zeros: " + countZeros2D(arr1));
+    System.out.println("Arr: " + Arrays.deepToString(arr1) + " Zeros: " + countZeros2D(arr1));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
