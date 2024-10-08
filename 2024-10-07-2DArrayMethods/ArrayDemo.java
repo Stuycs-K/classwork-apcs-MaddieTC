@@ -70,6 +70,10 @@ public class ArrayDemo{
 	System.out.println("Initial: " + Arrays.deepToString(arr4) + " Into: " + Arrays.deepToString(swapRC(arr4)));
 	arr4 = new int[][] {{1, 2, 3}, {}};
 	System.out.println("Initial: " + Arrays.deepToString(arr4) + " Into: " + Arrays.deepToString(swapRC(arr4)));
+	
+	int[][] arr2;
+	arr2 = new int[][] {{1,2},{3}};
+	System.out.println("Arr: " + Arrays.deepToString(arr2) + " html: " + htmlTable(arr2));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -194,6 +198,16 @@ public class ArrayDemo{
   //   e.g. htmlTable(new int[][]{{1,2},{3}})  returns:
   // "<table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>"
   public static String htmlTable(int[][]nums){
-    return "";
+    String result = "<table><tr>";
+	for (int y = 0; y < nums.length; y++) {
+		for (int x = 0; x < nums[y].length; x++) {
+			if (x == 0) {
+				result = result + "<tr>";
+			}
+			result = result + "<td>" + nums[y][x] + "</td>";
+		}
+		result = result + "</tr>";
+	}
+	return result + "</table>";
   }
 }
