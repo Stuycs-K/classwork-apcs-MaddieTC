@@ -45,6 +45,7 @@ public class ArrayDemo{
 	System.out.println("Old: " + Arrays.deepToString(arr5)); 
 	replaceNegative(arr5);
 	System.out.println("New: " + Arrays.deepToString(arr5));
+	System.out.println("Does personal method match the built in method? " + Arrays.deepToString(arr5).equals(arrToString(arr5)));
 	
 	int[][] arr6; 
 	arr6 = new int[][] {{1, 2, 3}, {4, 5, 6}};
@@ -54,6 +55,7 @@ public class ArrayDemo{
 	arr6[0][0] = 10;
 	System.out.print("Original (edited): " + Arrays.deepToString(arr6));
 	System.out.println(" Copy of (unedited) original: " + Arrays.deepToString(arr7) + " Is the address the same? (expected false): " + (arr6 == arr7));
+	System.out.println("Does personal method match the built in method? " + Arrays.deepToString(arr7).equals(arrToString(arr7)));
 	
     int[][] arr4;
 	arr4 = new int[][] {{1, 2, 3}, {4, 5, 6}};
@@ -70,6 +72,7 @@ public class ArrayDemo{
 	System.out.println("Initial: " + Arrays.deepToString(arr4) + " Into: " + Arrays.deepToString(swapRC(arr4)));
 	arr4 = new int[][] {{1, 2, 3}, {}};
 	System.out.println("Initial: " + Arrays.deepToString(arr4) + " Into: " + Arrays.deepToString(swapRC(arr4)));
+	System.out.println("Does personal method match the built in method? " + Arrays.deepToString(arr4).equals(arrToString(arr4)));
 	
 	int[][] arr2;
 	arr2 = new int[][] {{1,2},{3}};
@@ -80,6 +83,7 @@ public class ArrayDemo{
 	System.out.println("Arr: " + Arrays.deepToString(arr2) + " html: " + htmlTable(arr2));
 	arr2 = new int[][] {{1}, {2, 3}};
 	System.out.println("Arr: " + Arrays.deepToString(arr2) + " html: " + htmlTable(arr2));
+	System.out.println("Does personal method match the built in method? " + Arrays.deepToString(arr2).equals(arrToString(arr2)));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
