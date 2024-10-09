@@ -206,6 +206,10 @@ public class ArrayDemo{
   public static String htmlTable(int[][]nums){
     String result = "<table>";
 	for (int y = 0; y < nums.length; y++) {
+		if (nums[y].length == 0) {
+			result = result + "<tr></tr>";
+		}
+		else {
 		for (int x = 0; x < nums[y].length; x++) {
 			if (x == 0) {
 				result = result + "<tr>";
@@ -213,6 +217,7 @@ public class ArrayDemo{
 			result = result + "<td>" + nums[y][x] + "</td>";
 		}
 		result = result + "</tr>";
+	}
 	}
 	return result + "</table>";
   }
