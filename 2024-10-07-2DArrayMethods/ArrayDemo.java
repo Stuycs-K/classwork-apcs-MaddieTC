@@ -74,6 +74,12 @@ public class ArrayDemo{
 	int[][] arr2;
 	arr2 = new int[][] {{1,2},{3}};
 	System.out.println("Arr: " + Arrays.deepToString(arr2) + " html: " + htmlTable(arr2));
+	arr2 = new int[][] {{}, {1}};
+	System.out.println("Arr: " + Arrays.deepToString(arr2) + " html: " + htmlTable(arr2));
+	arr2 = new int[][] {{}, {}};
+	System.out.println("Arr: " + Arrays.deepToString(arr2) + " html: " + htmlTable(arr2));
+	arr2 = new int[][] {{1}, {2, 3}};
+	System.out.println("Arr: " + Arrays.deepToString(arr2) + " html: " + htmlTable(arr2));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
