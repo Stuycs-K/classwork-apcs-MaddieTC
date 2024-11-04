@@ -8,7 +8,7 @@ public class ReadFile {
       Scanner input = new Scanner(file);
       while (input.hasNext()) {
 		  String line = input.nextLine();
-        if(line.contains("{")){
+        if(line.indexOf("{") > -1){
 			System.out.println(line);
         }
       }
