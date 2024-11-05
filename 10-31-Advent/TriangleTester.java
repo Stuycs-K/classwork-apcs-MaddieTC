@@ -3,7 +3,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 public class TriangleTester {
   public static void main(String[] args){
-   // System.out.println(countTrianglesA("inputTri.txt"));
+    System.out.println(countTrianglesA("inputTri.txt"));
     System.out.println(countTrianglesB("inputTri.txt"));
 
   }
@@ -34,21 +34,26 @@ public class TriangleTester {
   
   public static int countTrianglesB(String filename) {
 	  int count = 0;
+	  int[] uno = new int[1000];
+	  int[] dos = new int[1000];
+	  int[] tres = new int[1000];
+	  int i = 0;
 	  try {
 		  File file = new File(filename);
 		  Scanner input = new Scanner (file);
-		  int[] uno = new int[1000];
-		  int[] dos = new int[1000];
-		  int[] tres = new int[1000];
-		  int i = 0;
 		  while (input.hasNextLine()) {
 			  String line = input.nextLine();
 			  String[]nums = line.split(" ");
+		  if (nums.length == 3) {
 			  uno[i] = Integer.parseInt(nums[0]);
 			  dos[i] = (Integer.parseInt(nums[1]));
 			  tres[i] = (Integer.parseInt(nums[2]));
 			  i++;
 			  }
+		else {
+			  System.out.println("Line contains more than 3 numbers.");
+		  }
+		  }
 		 for (int z = 0; z < i; z++) {
 			if (validTri(uno[z], dos[z], tres[z])) {
 				count++;
