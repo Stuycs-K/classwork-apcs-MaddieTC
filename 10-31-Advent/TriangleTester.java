@@ -14,7 +14,7 @@ public class TriangleTester {
     Scanner input = new Scanner (file);
     while (input.hasNextLine()) {
       String line = input.nextLine();
-      String[]nums = line.split(" ");
+      String[]nums = line.split("\s+");
       if (validTri(Integer.parseInt(nums[0]), Integer.parseInt(nums[1]), Integer.parseInt(nums[2]))) {
         count++;
     }
@@ -22,8 +22,8 @@ public class TriangleTester {
   input.close();
   }
   catch (FileNotFoundException ex) {
-      System.out.println("File not found");
-      return -1; 
+      System.out.println("File not found"); 
+	  return -1;
     }
 	  return count;
 }
@@ -43,7 +43,7 @@ public class TriangleTester {
 		  Scanner input = new Scanner (file);
 		  while (input.hasNextLine()) {
 			  String line = input.nextLine();
-			  String[]nums = line.split(" ");
+			  String[]nums = line.split("\s+");
 		  if (nums.length == 3) {
 			  uno[i] = Integer.parseInt(nums[0]);
 			  dos[i] = (Integer.parseInt(nums[1]));
@@ -62,7 +62,7 @@ public class TriangleTester {
 	  }
 	  catch (FileNotFoundException ex) {
       System.out.println("File not found");
-      return -1; 
+	  return -1;
     }
 	  return count;
   }
