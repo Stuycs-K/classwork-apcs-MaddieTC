@@ -6,21 +6,24 @@ public class TriangleTester {
     System.out.println(countTrianglesA("inputTri.txt"));
   }
   public static int countTrianglesA(String filename) {
-    //File file = new File(filename);
-    Scanner input = new Scanner (filename);
     int count = 0;
+	try {
+    File file = new File(filename);
+    Scanner input = new Scanner (file);
     while (input.hasNextLine()) {
       String line = input.nextLine();
       String[]nums = line.split(" ");
-      for (int y = 0; y < nums.length; y++) {
-      if (validTri(Integer.parseInt(nums[y]), Integer.parseInt(nums[y] + 1), Integer.parseInt(nums[y] + 2))) {
+      if (validTri(Integer.parseInt(nums[0]), Integer.parseInt(nums[1]), Integer.parseInt(nums[2]))) {
         count++;
-      }
     }
-  }
+}
   input.close();
-
-  return count;
+  }
+  catch (FileNotFoundException ex) {
+      System.out.println("File not found");
+      return -1; 
+    }
+	  return count;
 }
 
   public static boolean validTri (int a, int b, int c) {
