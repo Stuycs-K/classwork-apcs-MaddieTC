@@ -5,7 +5,6 @@ public class TriangleTester {
   public static void main(String[] args){
     System.out.println(countTrianglesA("inputTri.txt"));
     System.out.println(countTrianglesB("inputTri.txt"));
-
   }
   public static int countTrianglesA(String filename) {
     int count = 0;
@@ -14,7 +13,7 @@ public class TriangleTester {
     Scanner input = new Scanner (file);
     while (input.hasNextLine()) {
       String line = input.nextLine();
-      String[]nums = line.split("\s+");
+      String[]nums = line.split("\\s+");
       if (validTri(Integer.parseInt(nums[0]), Integer.parseInt(nums[1]), Integer.parseInt(nums[2]))) {
         count++;
     }
@@ -34,16 +33,23 @@ public class TriangleTester {
   
   public static int countTrianglesB(String filename) {
 	  int count = 0;
-	  int[] uno = new int[1000];
-	  int[] dos = new int[1000];
-	  int[] tres = new int[1000];
-	  int i = 0;
+	  int size = 0;
 	  try {
 		  File file = new File(filename);
 		  Scanner input = new Scanner (file);
 		  while (input.hasNextLine()) {
+			  input.nextLine();
+			  size++;
+		  }
+		  input.close();
+	  int[] uno = new int[size];
+	  int[] dos = new int[size];
+	  int[] tres = new int[size];
+	  int i = 0;
+	  input = new Scanner (file);
+		  while (input.hasNextLine()) {
 			  String line = input.nextLine();
-			  String[]nums = line.split("\s+");
+			  String[]nums = line.split("\\s+");
 		  if (nums.length == 3) {
 			  uno[i] = Integer.parseInt(nums[0]);
 			  dos[i] = (Integer.parseInt(nums[1]));
@@ -54,11 +60,18 @@ public class TriangleTester {
 			  System.out.println("Line contains more than 3 numbers.");
 		  }
 		  }
-		 for (int z = 0; z < i; z++) {
-			if (validTri(uno[z], dos[z], tres[z])) {
+		 for (int z = 0; z < i - 2; z+=3) {
+			if (validTri(uno[z], uno[z + 1], uno[z + 2])) {
+				count++;
+		 }
+		 	if (validTri(dos[z], dos[z + 1], dos[z + 2])) {
+				count++;
+		 }
+			if (validTri(tres[z], tres[z + 1], tres[z + 2])) {
 				count++;
 		 }
 		 }
+	    input.close();
 	  }
 	  catch (FileNotFoundException ex) {
       System.out.println("File not found");
