@@ -12,7 +12,23 @@ public class ArrayListPractice {
 		}
 		return aa;
 	}
+	public static void replaceEmpty( ArrayList<String> original){
+		for (int y = 0; y < original.size(); y++) {
+			if (original.get(y).equals("")) {
+				original.set(y, "Empty");
+			}
+		}
+} 
+
 	public static void main(String[] args) {
 		System.out.println(createRandomArray(2));
+		System.out.println(createRandomArray(0));
+		
+		ArrayList<String> a = createRandomArray(3);
+		System.out.println(a);
+		replaceEmpty(a);
+		System.out.println(a);
+
+
 	}
 }
