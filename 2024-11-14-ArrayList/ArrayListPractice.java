@@ -70,7 +70,21 @@ public class ArrayListPractice {
 		ArrayList<String> d = createRandomArray(3);
 		System.out.println(c);
 		System.out.println(d);
+		replaceEmpty(c);
+		replaceEmpty(d);
 		System.out.println(mixLists(c,d));
+		ArrayList<String> e = createRandomArray(0);
+		System.out.println(mixLists(c,e));
+		System.out.println(mixLists(b,d));
 
+		ArrayList<String> f = createRandomArray(200000);
+		ArrayList<String> g = createRandomArray(100);
+		replaceEmpty(f);
+		replaceEmpty(g);
+		System.out.println(f);
+		System.out.println(makeReversedList(f));
+		System.out.println(g);
+		System.out.println(makeReversedList(g));
+		System.out.println(mixLists(f,g));
 	}
 }
