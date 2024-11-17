@@ -27,6 +27,31 @@ public class ArrayListPractice {
 		}
 		return rev;
 	}
+	
+	public static ArrayList<String> mixLists( ArrayList<String> a,  ArrayList<String> b){
+		ArrayList<String> ret = new ArrayList<String>();
+		ArrayList<String> smaller;
+		ArrayList<String> larger;
+		if (a.size() >= b.size()) {
+			smaller = b;
+			larger = a;
+		}
+		else {
+			smaller = a;
+			larger = b;
+		}
+		for (int y = 0; y < smaller.size(); y++) {
+			ret.add(a.get(y));
+			ret.add(b.get(y));
+		}
+		for (int z = smaller.size(); z < larger.size(); z++) {
+			ret.add(larger.get(z));
+		}
+		return ret;
+  //return a new ArrayList that has all values of a and b in alternating order that is:
+  //a[0], b[0], a[1], b[1]...
+  //If one list is longer than the other, just attach the remaining values to the end.
+} 
 
 	public static void main(String[] args) {
 		System.out.println(createRandomArray(2));
@@ -40,6 +65,12 @@ public class ArrayListPractice {
 		ArrayList<String> b = createRandomArray(5);
 		System.out.println(b);
 		System.out.println(makeReversedList(b));
+		
+		ArrayList<String> c = createRandomArray(2);
+		ArrayList<String> d = createRandomArray(3);
+		System.out.println(c);
+		System.out.println(d);
+		System.out.println(mixLists(c,d));
 
 	}
 }
