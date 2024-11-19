@@ -12,10 +12,12 @@ public class TriangleTester {
     File file = new File(filename);
     Scanner input = new Scanner (file);
     while (input.hasNextLine()) {
-      String line = input.nextLine();
+      String line = input.nextLine().trim();
+	  if (!line.isEmpty()) {
       String[]nums = line.split("\\s+");
       if (validTri(Integer.parseInt(nums[0]), Integer.parseInt(nums[1]), Integer.parseInt(nums[2]))) {
         count++;
+	  }
     }
 }
   input.close();
@@ -48,7 +50,7 @@ public class TriangleTester {
 	  int i = 0;
 	  input = new Scanner (file);
 		  while (input.hasNextLine()) {
-			  String line = input.nextLine();
+			  String line = input.nextLine().trim();
 			  String[]nums = line.split("\\s+");
 		  if (nums.length == 3) {
 			  uno[i] = Integer.parseInt(nums[0]);
