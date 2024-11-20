@@ -17,29 +17,29 @@ public class Taxicab {
 		  if (!line.isEmpty()) {
 			  String[]nums = line.split(", ");
         for (int s = 0; s < nums.length; s++) {
-          if (nums[0].indexOf("R") > -1) {
+          if (nums[s].indexOf("R") > -1) {
   				  dir++;
   				  if (dir == 4) {
   					  dir = 0;
   				  }
   			  }
-  			  if (nums[0].indexOf("L") > -1) {
+  			  if (nums[s].indexOf("L") > -1) {
   				  dir--;
   				  if (dir == -1) {
   					  dir = 3;
   				  }
   			  }
         if (dir == 0) {
-          ycoor = ycoor + Integer.parseInt(nums[0].substring(1));
+          ycoor = ycoor + Integer.parseInt(nums[s].substring(1));
         }
         if (dir == 1) {
-          xcoor = xcoor + Integer.parseInt(nums[0].substring(1));
+          xcoor = xcoor + Integer.parseInt(nums[s].substring(1));
         }
         if (dir == 2) {
-          ycoor = ycoor - Integer.parseInt(nums[0].substring(1));
+          ycoor = ycoor - Integer.parseInt(nums[s].substring(1));
         }
         if (dir == 3) {
-          xcoor = xcoor - Integer.parseInt(nums[0].substring(1));
+          xcoor = xcoor - Integer.parseInt(nums[s].substring(1));
         }
       }
 
