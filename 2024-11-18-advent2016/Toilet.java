@@ -19,24 +19,37 @@ public class Toilet {
           if (nums[s].equals("U")) {
 			  if (digit - 3 < 1) {
 				  digit = digit;
-				  pad = pad + digit;
 			  }
 			  else {
 				digit = digit - 3;
-				pad = pad + digit;
 			  }
   				  }
 		  if (nums[s].equals("D")) {
 			  if (digit + 3 > 9) {
 				  digit = digit; 
-				  pad = pad + digit;
 			  }
 			  else {
 				  digit = digit + 3;
-				  pad = pad + digit;
 			  }
-		  }			  
+		  }
+		  if (nums[s].equals("R")) {
+			  if (digit == 3 || digit == 6 || digit == 9) {
+				  digit = digit;
+			  }
+			  else {
+				  digit = digit + 1;
+			  }
+		  }
+		  if (nums[s].equals("L")) {
+			  if (digit == 1 || digit == 4 || digit == 7) {
+				  digit = digit;
+			  }
+			  else {
+				  digit = digit - 1;
+			  }
+		  }
   			  }
+			  pad = pad + digit;
       }
 
       }
