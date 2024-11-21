@@ -6,21 +6,41 @@ public class Decoy {
     System.out.println(find("input3.txt"));
   }
   public static String find (String filename) {
-    int rooms = 0;
-	  String checksum = "";
+    int sum = 0;
 	  try {
       File file = new File(filename);
 	  Scanner input = new Scanner (file);
 	  while (input.hasNextLine()) {
 		  String line = input.nextLine().trim();
+		  String[] alph = new String["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+		  String[] inst = new String[5];
+		  String id = "";
 		  if (!line.isEmpty()) {
-			  String[]nums = line.split("");
-        for (int s = 0; s < nums.length; s++) {
-
+			  String[]nums = line.split("-");
+			  String 
+        for (int s = 0; s < alph.length; s++) {
+			int count = 0;
+			for (int j = 0; j < nums.length; j++) {
+				if (nums[j].equals(alph[s])) {
+					count++;
+				}
+			}
+			for (int x = 0; x < inst.length; x++) {
+				if (count > Integer.parseInt(inst[x].substring(1))) {
+					inst[x] = alph[s] + count;
+				}
+			} 
+		  }
+		  for (int m > 0; m < inst.length; m++) {
+			  for (int z = 0; z < ) {
+			  if (inst[m].substring(0,1).equals) {
+				  return true;
+			  }
+			  }
 		  }
   			  }
-			  pad = pad + digit;
-      }
+			  return sum;
+			  }
 
       }
 	        input.close();
