@@ -9,6 +9,8 @@ public class Taxicab {
 	  int xcoor = 0;
 	  int ycoor = 0;
 	  int dir = 0;
+	  String[] movess = new String[10000000];
+	  int stat = 0;
 	  try {
       File file = new File(filename);
 	  Scanner input = new Scanner (file);
@@ -29,19 +31,30 @@ public class Taxicab {
   					  dir = 3;
   				  }
   			  }
+			  int moves = Integer.parseInt(nums[s].substring(1));
+			  for (int j = 0; j < moves; j++) {
         if (dir == 0) {
-          ycoor = ycoor + Integer.parseInt(nums[s].substring(1));
+          ycoor++;
         }
         if (dir == 1) {
-          xcoor = xcoor + Integer.parseInt(nums[s].substring(1));
+          xcoor++;
         }
         if (dir == 2) {
-          ycoor = ycoor - Integer.parseInt(nums[s].substring(1));
+          ycoor--;
         }
         if (dir == 3) {
-          xcoor = xcoor - Integer.parseInt(nums[s].substring(1));
+          xcoor--;
         }
+		String rn = xcoor + " " + ycoor;
+		for (int g = 0; g < stat; g++) {
+		if (movess[g].equals(rn)) {
+			return Math.abs(xcoor) + Math.abs(ycoor);
+		}
+		}
+		movess[stat] = rn;
+		stat++;
       }
+		}
 
       }
 		  }
@@ -50,7 +63,6 @@ public class Taxicab {
     catch (FileNotFoundException ex) {
       System.out.println("File not found");
     }
-
-    return Math.abs(xcoor) + Math.abs(ycoor);
+	return Math.abs(xcoor) + Math.abs(ycoor);
   }
 }
