@@ -6,7 +6,10 @@ public class Toilet {
     System.out.println(code("input2.txt"));
   }
   public static String code (String filename) {
-	  int digit = 5;
+	  int[][] digit = {{0,0,1,0,0},
+	  {0,2,3,4,0},{5,6,7,8,9},{0,'A','B','C',0},{0,0,'D',0,0}};
+	  int row = 2;
+	  int column = 0;
 	  String pad = "";
 	  try {
       File file = new File(filename);
@@ -17,39 +20,44 @@ public class Toilet {
 			  String[]nums = line.split("");
         for (int s = 0; s < nums.length; s++) {
           if (nums[s].equals("U")) {
-			  if (digit - 3 < 1) {
-				  digit = digit;
-			  }
-			  else {
-				digit = digit - 3;
+			  if (row > 0 && digit[row-1][column] != 0) {
+				  row--;
 			  }
   				  }
 		  if (nums[s].equals("D")) {
-			  if (digit + 3 > 9) {
-				  digit = digit; 
-			  }
-			  else {
-				  digit = digit + 3;
+			  if (row < 4 && digit[row+1][column] != 0) {
+				  row++; 
 			  }
 		  }
 		  if (nums[s].equals("R")) {
-			  if (digit == 3 || digit == 6 || digit == 9) {
-				  digit = digit;
-			  }
-			  else {
-				  digit = digit + 1;
+			  if (column < 4 && digit[row][column + 1] != 0) {
+				  column++;
 			  }
 		  }
 		  if (nums[s].equals("L")) {
-			  if (digit == 1 || digit == 4 || digit == 7) {
-				  digit = digit;
-			  }
-			  else {
-				  digit = digit - 1;
+			  if (column > 0 && digit[row][column - 1] != 0) {
+				  column--;
 			  }
 		  }
   			  }
-			  pad = pad + digit;
+			  if (digit[row][column] == 'A') {
+				  pad = pad + "A";
+			  }
+			  if (digit[row][column] == 'B') {
+				  pad = pad + "B";
+			  }
+			  if (digit[row][column] == 'C') {
+				  pad = pad + "C";
+			  }
+			  if (digit[row][column] == 'D') {
+				  pad = pad + "D";
+			  }
+			  else if (digit[row][column] != 'A' 
+			  && digit[row][column] != 'B' 
+			  && digit[row][column] != 'C'
+			  && digit[row][column] != 'D') {
+			  pad = pad + digit[row][column];
+			  }
       }
 
       }
