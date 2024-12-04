@@ -37,8 +37,6 @@ public class ColorDemo {
 	System.out.print("\u001b[48;2;128;128;128m");
     System.out.print("                     ");
     System.out.println("\u001b[47m");
-	
-	
 
     System.out.print("                                    ");
 	System.out.print("\u001b[48;2;128;128;128m");
@@ -60,7 +58,6 @@ public class ColorDemo {
     System.out.print("                      ");
     System.out.println("\u001b[47m");
 
-
     System.out.print("                          ");
 	System.out.print("\u001b[48;2;255;209;223m");
     System.out.print("  ");
@@ -81,16 +78,6 @@ public class ColorDemo {
 	System.out.print("RAT");
     System.out.println("\u001b[47m");
 
-	
-
-
-
-
-
-	
-
     System.out.print("\u001b[0m");
-   // System.out.print("\u001b")
-   // System.out.print("\u001b")
   }
 }
