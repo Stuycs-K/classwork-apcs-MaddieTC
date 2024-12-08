@@ -1,25 +1,30 @@
 public class Warrior extends Adventurer {
   private int strength;
+  
+  public Warrior(String name){
+      super(name);
+      this.strength = 10;
+  }
 
-  public Adventurer(String name, int hp){
-      super.(name, hp);
+  public Warrior(String name, int hp){
+      super(name, hp);
       this.strength = 10;
   }
 
 
-  public abstract String getSpecialName() {
+  public String getSpecialName() {
     return "strength";
   }
   //accessor methods
-  public abstract int getSpecial(){
+  public int getSpecial(){
     return this.strength;
   }
 
-  public abstract void setSpecial(int n){
+  public void setSpecial(int n){
     this.strength = n;
   }
 
-  public abstract int getSpecialMax(){
+  public int getSpecialMax(){
     return 100;
   }
 
@@ -28,16 +33,18 @@ public class Warrior extends Adventurer {
     support their allys
   */
   //hurt or hinder the target adventurer
-  public abstract String attack(Adventurer other) {
-    int dam = (int) Random.nextDouble() * 11;
+  public String attack(Adventurer other) {
+	Random ran = new Random()
+    int dam = (int) ran.nextDouble() * 11;
     other.applyDamage(dam);
     return this.getName() + " deals " + dam + " to " + other.getName();
   }
 
   //heall or buff the target adventurer
-  public abstract String support(Adventurer other) {
-    int support = (int) Random.nextDouble() * 6;
-    if (other.getHP() + 5 <= other.getmaxHP())) {
+  public String support(Adventurer other) {
+	Random ran = new Random()
+    int support = (int) ran.nextDouble() * 6;
+    if (other.getHP() + 5 <= other.getmaxHP()) {
       other.setHP(other.getHP() + 5);
       return other.getName() + " was healed " + support + " HP";
     }
@@ -48,8 +55,8 @@ public class Warrior extends Adventurer {
   }
 
   //heall or buff self
-  public abstract String support();
+  public String support();
 
   //hurt or hinder the target adventurer, consume some special resource
-  public abstract String specialAttack(Adventurer other);
+  public String specialAttack(Adventurer other);
 }
