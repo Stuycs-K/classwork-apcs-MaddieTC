@@ -1,3 +1,4 @@
+import java.util.Random;
 public class Warrior extends Adventurer {
   private int strength;
   
@@ -11,6 +12,13 @@ public class Warrior extends Adventurer {
       this.strength = 10;
   }
 
+  public int restoreSpecial(int n){
+      if( n > getSpecialMax() - getSpecial()){
+              n = getSpecialMax() - getSpecial();
+      }
+      setSpecial(getSpecial()+n);
+      return n;
+  }
 
   public String getSpecialName() {
     return "strength";
@@ -34,7 +42,7 @@ public class Warrior extends Adventurer {
   */
   //hurt or hinder the target adventurer
   public String attack(Adventurer other) {
-	Random ran = new Random()
+	Random ran = new Random();
     int dam = (int) ran.nextDouble() * 11;
     other.applyDamage(dam);
     return this.getName() + " deals " + dam + " to " + other.getName();
@@ -42,21 +50,43 @@ public class Warrior extends Adventurer {
 
   //heall or buff the target adventurer
   public String support(Adventurer other) {
-	Random ran = new Random()
+	Random ran = new Random();
     int support = (int) ran.nextDouble() * 6;
-    if (other.getHP() + 5 <= other.getmaxHP()) {
-      other.setHP(other.getHP() + 5);
-      return other.getName() + " was healed " + support + " HP";
+    if (other.getHP() + support <= other.getmaxHP()) {
+      other.setHP(other.getHP() + support);
+      return other.getName() + " recieved support. " + support + " HP was restored.";
     }
     else {
       other.setHP(other.getmaxHP());
-      return other.getName() + " was healed to full health";
+      return other.getName() + " was supported and healed to full health";
     }
   }
 
   //heall or buff self
-  public String support();
+  public String support() {
+	Random ran = new Random();
+    int support = (int) ran.nextDouble() * 6;
+    if (this.getHP() + support <= this.getmaxHP()) {
+      this.setHP(this.getHP() + support);
+      return this.getName() + " recieved support. " + support + " HP was restored.";
+    }
+    else {
+      this.setHP(this.getmaxHP());
+      return this.getName() + " was supported and healed to full health";
+    }
+  }
 
   //hurt or hinder the target adventurer, consume some special resource
-  public String specialAttack(Adventurer other);
+  public String specialAttack(Adventurer other) {
+	  Random ran = new Random();
+	  int dam = (int) ran.nextDouble() * 11;
+	  if (strength > 0) {
+		other.applyDamage(dam);
+		return this.getName() + " uses a special attack and deals " + dam + " to " + other.getName();
+	  }
+	  else {
+		  return this.getName() + " doesn't have enough " + this.getSpecialName() + " to use this attack.";
+	  }
+  }
+
 }
