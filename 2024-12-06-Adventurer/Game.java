@@ -30,7 +30,7 @@ class Game {
       System.out.println("Type: (a)ttack / (sp)ecial / (su)pport / quit");
 	  System.out.println();
     }
-	if (input.equals("sp") || input.equals("special")) {
+	else if (input.equals("sp") || input.equals("special")) {
       a.specialAttack(b);
       System.out.println(userName + ", " + a.getHP() + "/20 HP, " +
       a.getSpecial() + "/100 Strength");
@@ -39,7 +39,7 @@ class Game {
       System.out.println("Type: (a)ttack / (sp)ecial / (su)pport / quit");
 	  System.out.println();
     }
-	if (input.equals("su") || input.equals("special")) {
+	else if (input.equals("su") || input.equals("special")) {
       a.support();
       System.out.println(userName + ", " + a.getHP() + "/20 HP, " +
       a.getSpecial() + "/100 Strength");
@@ -48,8 +48,12 @@ class Game {
       System.out.println("Type: (a)ttack / (sp)ecial / (su)pport / quit");
 	  System.out.println();
     }
-	if (input.equals("quit")) {
+	else if (input.equals("quit")) {
 		return;
+	}
+	else{
+		System.out.println("You don't get that option. Try again?");
+		System.out.println();
 	}
 }
   }
