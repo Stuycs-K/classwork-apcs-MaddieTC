@@ -17,9 +17,10 @@ class Game {
     System.out.println("Goose, " + b.getHP() + "/20 HP, " +
     b.getSpecial() + "/12 Caffeine");
     System.out.println("Type: (a)ttack / (sp)ecial / (su)pport / quit");
+	System.out.println();
 
-    String input = userInput.nextLine();
     while (a.getHP() > 0 && b.getHP() > 0) {
+		String input = userInput.nextLine();
     if (input.equals("a") || input.equals("attack")) {
       a.attack(b);
       System.out.println(userName + ", " + a.getHP() + "/20 HP, " +
@@ -27,7 +28,29 @@ class Game {
       System.out.println("Goose, " + b.getHP() + "/20 HP, " +
       b.getSpecial() + "/12 Caffeine");
       System.out.println("Type: (a)ttack / (sp)ecial / (su)pport / quit");
+	  System.out.println();
     }
+	if (input.equals("sp") || input.equals("special")) {
+      a.specialAttack(b);
+      System.out.println(userName + ", " + a.getHP() + "/20 HP, " +
+      a.getSpecial() + "/100 Strength");
+      System.out.println("Goose, " + b.getHP() + "/20 HP, " +
+      b.getSpecial() + "/12 Caffeine");
+      System.out.println("Type: (a)ttack / (sp)ecial / (su)pport / quit");
+	  System.out.println();
+    }
+	if (input.equals("su") || input.equals("special")) {
+      a.support();
+      System.out.println(userName + ", " + a.getHP() + "/20 HP, " +
+      a.getSpecial() + "/100 Strength");
+      System.out.println("Goose, " + b.getHP() + "/20 HP, " +
+      b.getSpecial() + "/12 Caffeine");
+      System.out.println("Type: (a)ttack / (sp)ecial / (su)pport / quit");
+	  System.out.println();
+    }
+	if (input.equals("quit")) {
+		return;
+	}
 }
   }
 }
