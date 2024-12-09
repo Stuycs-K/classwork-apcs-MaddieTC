@@ -16,5 +16,18 @@ class Game {
     a.getSpecial() + "/100 Strength");
     System.out.println("Goose, " + b.getHP() + "/20 HP, " +
     b.getSpecial() + "/12 Caffeine");
+    System.out.println("Type: (a)ttack / (sp)ecial / (su)pport / quit");
+
+    String input = userInput.nextLine();
+    while (a.getHP() > 0 && b.getHP() > 0) {
+    if (input.equals("a") || input.equals("attack")) {
+      a.attack(b);
+      System.out.println(userName + ", " + a.getHP() + "/20 HP, " +
+      a.getSpecial() + "/100 Strength");
+      System.out.println("Goose, " + b.getHP() + "/20 HP, " +
+      b.getSpecial() + "/12 Caffeine");
+      System.out.println("Type: (a)ttack / (sp)ecial / (su)pport / quit");
+    }
+}
   }
 }
